@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2025-03-30T00:21:37.7239268"><title>RValue | YYC Toolbox Lua API</title><script type="application/json" id="virtual-toc-data">[{"id":"type","level":0,"title":"type","anchor":"#type"},{"id":"tobool","level":0,"title":"toBool","anchor":"#tobool"},{"id":"tostring","level":0,"title":"toString","anchor":"#tostring"},{"id":"toreal","level":0,"title":"toReal","anchor":"#toreal"},{"id":"stringify","level":0,"title":"stringify","anchor":"#stringify"},{"id":"add-sub-mul-div","level":0,"title":"__add, __sub, __mul, __div","anchor":"#add-sub-mul-div"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b725/app.css" rel="stylesheet"><meta name="msapplication-TileColor" content="#000000"><link rel="apple-touch-icon" sizes="180x180" href="https://jetbrains.com/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="https://jetbrains.com/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="https://jetbrains.com/favicon-16x16.png"><meta name="msapplication-TileImage" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-144x144.png"><meta name="msapplication-square70x70logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-70x70.png"><meta name="msapplication-square150x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-150x150.png"><meta name="msapplication-wide310x150logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x150.png"><meta name="msapplication-square310x310logo" content="https://resources.jetbrains.com/storage/ui/favicons/mstile-310x310.png"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="RValue | YYC Toolbox Lua API"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="YYC Toolbox Lua API Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/rvalue.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="RValue | YYC Toolbox Lua API"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/rvalue.html#webpage",
+    "url": "writerside-documentation/rvalue.html",
+    "name": "RValue | YYC Toolbox Lua API",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "YYC Toolbox Lua API Help"
+}</script><!-- End Schema.org --></head><body data-id="RValue" data-main-title="RValue" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="API Reference///API.md|API"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>YYC Toolbox Lua API  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="RValue" data-label-id="cs" id="RValue.md">RValue</h1><p id="w4uloq_4">This class acts as a proxy for the internal RValue class in YYC.</p><section class="chapter"><h2 id="type" data-toc="type" data-annotation-ids="field">type</h2><p> Type: <code class="code" id="w4uloq_12">int</code></p><p id="w4uloq_13">The type of this RValue. Possible values are as follows:</p><div class="code-block" data-lang="cpp">
+const int VALUE_REAL = 0;		// Real value
+const int VALUE_STRING = 1;		// String value
+const int VALUE_ARRAY = 2;		// Array value
+const int VALUE_PTR = 3;		// Ptr value
+const int VALUE_VEC3 = 4;		// Deprecated : unused : Vec3 (x,y,z)
+const int VALUE_UNDEFINED = 5;	// Undefined value
+const int VALUE_OBJECT = 6;		// YYObjectBase* value 
+const int VALUE_INT32 = 7;		// Int32 value
+const int VALUE_VEC4 = 8;		// Deprecated : unused : Vec4 (x,y,z,w)
+const int VALUE_VEC44 = 9;		// Deprecated : unused : Vec44 (matrix)
+const int VALUE_INT64 = 10;		// Int64 value
+const int VALUE_ACCESSOR = 11;	// Actually an accessor
+const int VALUE_NULL = 12;		// JS Null
+const int VALUE_BOOL = 13;		// Bool value
+const int VALUE_ITERATOR = 14;	// JS For-in Iterator
+const int VALUE_REF = 15;		// Reference value
+const int VALUE_UNSET = 0x0ffffff;
+</div></section><section class="chapter"><h2 id="tobool" data-toc="tobool" data-annotation-ids="method">toBool</h2><p> Converts the RValue to a bool. Internally the same as checking if the value is not equal to zero. </p><section class="chapter"><h3 id="toBool-args" data-toc="toBool-args">Arguments</h3><p id="w4uloq_18">None</p></section><section class="chapter"><h3 id="toBool-returns" data-toc="toBool-returns">Returns</h3><div class="table-wrapper"><table class="wide" id="w4uloq_19"><thead><tr class="ijRowHead" id="w4uloq_20"><th id="w4uloq_22"><p>Type</p></th><th id="w4uloq_23"><p>Description</p></th></tr></thead><tbody><tr id="w4uloq_21"><td id="w4uloq_24"><p><code class="code" id="w4uloq_26">bool</code></p></td><td id="w4uloq_25"><p>The value of the RValue as a bool.</p></td></tr></tbody></table></div></section></section><section class="chapter"><h2 id="tostring" data-toc="tostring" data-annotation-ids="method">toString</h2><p id="w4uloq_28">Gets the value of a <code class="code" id="w4uloq_31">VALUE_STRING</code> RValue.</p><section class="chapter"><h3 id="toString-args" data-toc="toString-args">Arguments</h3><p id="w4uloq_32">None</p></section><section class="chapter"><h3 id="toString-returns" data-toc="toString-returns">Returns</h3><div class="table-wrapper"><table class="wide" id="w4uloq_33"><thead><tr class="ijRowHead" id="w4uloq_34"><th id="w4uloq_36"><p>Type</p></th><th id="w4uloq_37"><p>Description</p></th></tr></thead><tbody><tr id="w4uloq_35"><td id="w4uloq_38"><p><code class="code" id="w4uloq_40">string</code></p></td><td id="w4uloq_39"><p>The value of the string RValue.</p></td></tr></tbody></table></div></section></section><section class="chapter"><h2 id="toreal" data-toc="toreal" data-annotation-ids="method">toReal</h2><p> Gets the value of a <code class="code" id="w4uloq_42">VALUE_REAL</code> RValue. </p><section class="chapter"><h3 id="toReal-args" data-toc="toReal-args">Arguments</h3><p id="w4uloq_45">None</p></section><section class="chapter"><h3 id="toReal-returns" data-toc="toReal-returns">Returns</h3><div class="table-wrapper"><table class="wide" id="w4uloq_46"><thead><tr class="ijRowHead" id="w4uloq_47"><th id="w4uloq_49"><p>Type</p></th><th id="w4uloq_50"><p>Description</p></th></tr></thead><tbody><tr id="w4uloq_48"><td id="w4uloq_51"><p><code class="code" id="w4uloq_53">number</code></p></td><td id="w4uloq_52"><p>The value of the real RValue.</p></td></tr></tbody></table></div></section></section><section class="chapter"><h2 id="stringify" data-toc="stringify" data-annotation-ids="method">stringify</h2><p> Turns an RValue of (almost) any type to a string. Useful for printing. </p><section class="chapter"><h3 id="stringify-args" data-toc="stringify-args">Arguments</h3><p id="w4uloq_57">None</p></section><section class="chapter"><h3 id="stringify-returns" data-toc="stringify-returns">Returns</h3><div class="table-wrapper"><table class="wide" id="w4uloq_58"><thead><tr class="ijRowHead" id="w4uloq_59"><th id="w4uloq_61"><p>Type</p></th><th id="w4uloq_62"><p>Description</p></th></tr></thead><tbody><tr id="w4uloq_60"><td id="w4uloq_63"><p><code class="code" id="w4uloq_65">string</code></p></td><td id="w4uloq_64"><p>The value of the RValue as a string.</p></td></tr></tbody></table></div></section></section><section class="chapter"><h2 id="add-sub-mul-div" data-toc="add-sub-mul-div">__add, __sub, __mul, __div</h2><p id="w4uloq_66">This type also supports arithmetic operations such as +, -, * and /.</p><section class="chapter"><h3 id="examples" data-toc="examples">Examples</h3><div class="code-block" data-lang="lua">
+local val = RValue(10)
+local val2 = RValue(10)
+local result = val + val2
+print(result:toReal()) -- Prints: 20
+</div><div class="code-block" data-lang="lua">
+local val = RValue(&quot;hello, &quot;)
+local val2 = RValue(&quot;world!&quot;)
+local result = val + val2
+print(result:toString()) -- Prints: hello, world!
+</div><div class="code-block" data-lang="lua">
+local val = RValue(&quot;hello, world! &quot;)
+local val2 = RValue(2)
+local result = val * val2
+print(result:toString()) -- Prints: hello, world! hello, world!
+</div></section></section><div class="last-modified">Last modified: 29 March 2025</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="api.html" class="navigation-links__prev">API</a><a href="objectinterface.html" class="navigation-links__next">ObjectInterface</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.22.0-b725/app.js"></script></body></html>
